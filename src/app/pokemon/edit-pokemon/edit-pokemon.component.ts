@@ -1,20 +1,19 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { Pokemon } from "../pokemon.model";
 import { PokemonService } from "../pokemon.service";
 
 @Component({
-    selector: "app-pokemon-detail",
+    selector: "app-edit-pokemon",
     standalone: false,
-    templateUrl: "./pokemon-detail.component.html",
+    templateUrl: "./edit-pokemon.component.html",
+    styleUrl: "./edit-pokemon.component.scss",
 })
-export class PokemonDetailComponent implements OnInit {
-    pokemonList: Pokemon[];
+export class EditPokemonComponent implements OnInit {
     pokemon: Pokemon | undefined;
 
     constructor(
         private route: ActivatedRoute,
-        private router: Router,
         private pokemonService: PokemonService
     ) {}
 
@@ -24,9 +23,5 @@ export class PokemonDetailComponent implements OnInit {
         if (pokemonId) {
             this.pokemon = this.pokemonService.getPokemon(+pokemonId);
         }
-    }
-
-    goToEditPokemon(pokemon: Pokemon) {
-        this.router.navigate(["edit/pokemon", pokemon.id]);
     }
 }

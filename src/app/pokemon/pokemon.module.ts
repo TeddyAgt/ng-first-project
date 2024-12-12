@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
+import { AddPokemonComponent } from "./add-pokemon/add-pokemon.component";
 import { CardBorderDirective } from "./card-border.directive";
 import { EditPokemonComponent } from "./edit-pokemon/edit-pokemon.component";
 import { PokemonDetailComponent } from "./pokemon-detail/pokemon-detail.component";
@@ -12,6 +13,7 @@ import { PokemonService } from "./pokemon.service";
 
 const pokemonRoutes: Routes = [
     { path: "edit/pokemon/:id", component: EditPokemonComponent },
+    { path: "pokemon/add", component: AddPokemonComponent },
     { path: "pokemons", component: PokemonListComponent },
     { path: "pokemon/:id", component: PokemonDetailComponent },
 ];
@@ -24,6 +26,7 @@ const pokemonRoutes: Routes = [
         PokemonDetailComponent,
         PokemonFormComponent,
         EditPokemonComponent,
+        AddPokemonComponent,
     ],
     imports: [CommonModule, FormsModule, RouterModule.forChild(pokemonRoutes)],
     providers: [PokemonService],

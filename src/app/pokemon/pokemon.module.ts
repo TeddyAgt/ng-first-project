@@ -10,6 +10,8 @@ import { PokemonFormComponent } from "./pokemon-form/pokemon-form.component";
 import { PokemonListComponent } from "./pokemon-list/pokemon-list.component";
 import { PokemonTypeColorPipe } from "./pokemon-type-color.pipe";
 import { PokemonService } from "./pokemon.service";
+import { SearchPokemonComponent } from './search-pokemon/search-pokemon.component';
+import { LoaderComponent } from './loader/loader.component';
 
 const pokemonRoutes: Routes = [
     { path: "edit/pokemon/:id", component: EditPokemonComponent },
@@ -27,6 +29,8 @@ const pokemonRoutes: Routes = [
         PokemonFormComponent,
         EditPokemonComponent,
         AddPokemonComponent,
+        SearchPokemonComponent,
+        LoaderComponent,
     ],
     imports: [CommonModule, FormsModule, RouterModule.forChild(pokemonRoutes)],
     providers: [PokemonService],
